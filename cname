@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="http://schema.org/RealEstateAgent">
+<head>
+    <!-- Cabecera mejorada con AMP -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomusVista | Inmobiliaria Premium en España</title>
+    
+    <!-- AMP Boilerplate -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXX');
+    </script>
+
+    <!-- Blog y Testimonios Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://domusvista.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://domusvista.com/buscar?q={search_term}",
+            "query-input": "required name=search_term"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonials" itemscope itemtype="http://schema.org/Review">
+        <h2>Opiniones de clientes</h2>
+        <div class="testimonial" itemprop="reviewBody">
+            <amp-img src="https://source.unsplash.com/random/100x100?person" 
+                     width="100" 
+                     height="100" 
+                     layout="responsive" 
+                     alt="Cliente satisfecho"></amp-img>
+            <p>"Excelente servicio, nos ayudaron a encontrar la casa perfecta"</p>
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span itemprop="name">María Gómez</span>
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                <meta itemprop="ratingValue" content="5">
+                <meta itemprop="bestRating" content="5">
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario Inteligente de Contacto -->
+    <amp-form method="post" action-xhr="https://api.domusvista.com/contact">
+        <fieldset>
+            <label>Nombre: <input type="text" name="name" required></label>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Teléfono: <input type="tel" name="phone" pattern="[0-9]{9}"></label>
+            <label>Interés: 
+                <select name="interest">
+                    <option value="compra">Compra</option>
+                    <option value="venta">Venta</option>
+                    <option value="alquiler">Alquiler</option>
+                </select>
+            </label>
+            <input type="submit" value="Enviar">
+        </fieldset>
+        <div submit-success>
+            <template type="amp-mustache">
+                ¡Mensaje enviado! Te contactaremos en {{email}}
+            </template>
+        </div>
+    </amp-form>
+
+    <!-- Sección del Blog -->
+    <section class="blog">
+        <h2>Últimas noticias</h2>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            <amp-img src="https://source.unsplash.com/random/800x400?real-estate" 
+                     width="800" 
+                     height="400" 
+                     layout="responsive" 
+                     alt="Consejos para comprar casa"></amp-img>
+            <h3 itemprop="headline">5 Consejos para comprar tu primera vivienda</h3>
+            <time datetime="2023-08-01" itemprop="datePublished">1 Agosto 2023</time>
+            <p itemprop="description">Guía completa para tomar la mejor decisión...</p>
+            <a href="/blog/consejos-compra-vivienda" itemprop="url">Leer más</a>
+        </article>
+    </section>
+
+    <!-- Sitemap.xml (debe estar en raíz del sitio) -->
+    <!-- Contenido ejemplo sitemap.xml:
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url><loc>https://domusvista.com/</loc></url>
+            <url><loc>https://domusvista.com/blog</loc></url>
+            <url><loc>https://domusvista.com/contacto</loc></url>
+        </urlset>
+    -->
+
+</body>
+</html>
